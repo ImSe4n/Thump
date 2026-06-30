@@ -3,6 +3,10 @@ class IngamePanelThump extends HTMLElement {
         super();
         this._timer = null;
         this._ready = false;
+        this._lastTickMs = null;
+        this._lastReport = null;
+
+        this._analyzer = new window.Thump.LandingAnalyzer();
     }
 
     //use to catch the exact touchdown frame of the aircraft
@@ -18,28 +22,48 @@ class IngamePanelThump extends HTMLElement {
     }
 
     _tick() {
-        let verticalSpeed;
-        try {
-            verticalSpeed = SimVar.GetSimVarValue("VERTICAL SPEED", "Feet per minute");
-        } catch (e) {
-            return;
-        }
-
-        if (verticalSpeed == undefined || verticalSpeed == null || Number.isNaN(verticalSpeed)) {
-            return;
-        }
+        const frame = window.Thump.Telemetry.readFrame();
+        if (!frame) return;
 
         if (!this._ready) {
             this._ready = true;
-            const thumpStatus = document.getElementById("thump-status");
-            if (thumpStatus) {
-                thumpStatus.textContent = "Live";
-            }
+            this._setStatus("Live");
         }
 
-        const thumpVerticalSpeed = document.getElementById("thump-vs");
-        if (thumpVerticalSpeed) {
-            thumpVerticalSpeed.textContent = Math.round(verticalSpeed);
+        this.renderLiveVs(frame.vsFpm);
+
+        const dt = this._lastTickMs ? (frame.tMs - this._lastTickMs) / 1000 : 0.05;
+        this._lastTickMs = frame.tMs;
+
+        const prevState = this._analyzer.currentState;
+        const report = this._analyzer.update(frame, dt);
+
+        if (prevState === "Airborne" && this._analyzer.currentState === "Landing") {
+            this._setStatus("Touchdown...");
+        }
+
+        if (report) {
+            this._lastReport = report;
+            this._renderReport(report);
+            this._setStatus("Live");
+        }
+    }
+
+    _setStatus(text) {
+        const el = document.getElementById("thump-status");
+        if (el) el.textContent = text;
+    }
+
+    _renderLiveVs(vsFpm) {
+        const el = document.getElementById("thump-vs");
+        if (el) el.textContent = Math.round(vsFpm);
+    }
+
+    _renderReport(report) {
+        const label = document.getElementById("thump-label");
+        if (label) {
+            label.textContent = 
+            `Last Landing: ${report.landingRateFpm} fpm | ` + `${report.peakG}g | ${report.bounces} bounce(s)`;
         }
     }
 }
