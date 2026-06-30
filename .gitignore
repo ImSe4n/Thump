@@ -1,0 +1,12 @@
+Packages/
+_Temp/
+**/Build/Packages/
+*.spb
+layout.json
+manifest.json
+
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
