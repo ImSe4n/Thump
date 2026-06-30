@@ -1,0 +1,1 @@
+"C:\MSFS_SDK\Tools\bin\fspackagetool.exe" "Thump\Build\thump.xml" copy /Y "Thump\Build\Packages\thump.spb" "Thump\InGamePanels"
