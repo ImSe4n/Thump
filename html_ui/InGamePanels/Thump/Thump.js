@@ -1,4 +1,4 @@
-class IngamePanelThump extends HTMLElement {
+class IngamePanelThump extends TemplateElement {
     constructor() {
         super();
         this._timer = null;
