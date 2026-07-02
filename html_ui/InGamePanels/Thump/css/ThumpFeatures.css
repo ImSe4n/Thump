@@ -1,0 +1,190 @@
+#container {
+  flex-grow: 1;
+  padding: calc(var(--screenHeight) * (15px / 1440));
+  display: flex;
+  height: calc(var(--screenHeight) * (340px / 1440));
+  width: 50vw;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  position: relative;
+  flex: 1 1 auto;
+}
+
+#container #open_landings {
+  position: relative;
+  width: calc(var(--screenHeight) * (35px / 1440));
+  height: calc(var(--screenHeight) * (35px / 1440));
+  margin-left: calc(var(--screenHeight) * (10px / 1440));
+  display: none;
+}
+
+.icon-text {
+  display: flex;
+  align-items: center;
+}
+
+.icon-text .icons {
+  margin-right: calc(var(--screenHeight) * (10px / 1440));
+  color: var(--enabledColor);
+  height: calc(var(--screenHeight) * (25px / 1440));
+  width: calc(var(--screenHeight) * (25px / 1440));
+}
+
+new-push-button .settingsField {
+  border-bottom: 2px solid #fff;
+  margin-bottom: calc(var(--screenHeight) * (15px / 1440));
+  max-width: calc(var(--screenHeight) * (600px / 1440));
+  padding: calc(var(--screenHeight) * (15px / 1440));
+}
+
+ingame-ui .settingsButton icon-element {
+  transform: scale(0.75);
+  transform-origin: center;
+}
+
+#settings {
+  font-size: var(--fontSizeParagraph);
+  background: var(--backgroundColorPanel) !important;
+}
+
+.settingsGroup {
+  border-bottom: 3px solid #fff;
+  padding: calc(var(--screenHeight) * (15px / 1440));
+}
+
+.helpField {
+  padding: calc(var(--screenHeight) * (15px / 1440));
+}
+
+.settingsField {
+  max-width: 60%;
+}
+
+.tab {
+  display: none;
+  visibility: hidden;
+  padding-top: calc(var(--screenHeight) * (5px / 1440));
+}
+
+.tab.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  visibility: visible;
+  border-top: 2px solid #fff
+}
+
+ingame-ui#Thump #TabSwitch {
+  height: calc(var(--screenHeight) * (48px / 1080));
+}
+
+ingame-ui#Thump tabmenu-item.Focused>.parent-is-highlighted {
+  position: absolute
+}
+
+ingame-ui#Thump #Tab2 {
+  display: block;
+  position: absolute;
+  flex: 1 1 auto;
+  width: 100%;
+  height: calc(100% - var(--headerSize)*2);
+}
+
+ingame-ui#Thump #MapInstrument {
+  outline: 10px solid #fff;
+  display: none;
+}
+
+ingame-ui#Thump #MapInstrument bing-map {
+  transform: rotateX(0)
+}
+
+#minibut {
+  margin-left: auto;
+  margin-right: calc(var(--screenHeight) * (15px / 1440));
+  margin-top: calc(var(--screenHeight) * (-60px / 1440));
+}
+
+#minibut:hover {
+  opacity: 1 !important;
+}
+
+#Transparency ui-input {
+  display: none;
+}
+
+/* Add the following styles to make the landing table scrollable */
+#landingTable {
+  max-height: calc(100vh - calc(var(--screenHeight) * (150px / 1440)));
+  overflow-y: auto;
+  margin: calc(var(--screenHeight) * (5px / 1440));
+}
+
+#runway {
+  position: absolute;
+  height: calc(100vh - var(--screenHeight) * (135px / 1440));
+  background-color: var(--backgroundColorPanel);
+}
+
+#content {
+  position: absolute;
+  left: calc(var(--screenHeight) * (300px / 1440));
+  height: 100%;
+  padding: calc(var(--screenHeight) * (15px / 1440));
+}
+
+.runways {
+  position: absolute;
+  height: 100% !important;
+  left: 75vw;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+#landing_area {
+  position: absolute;
+  height: 66.6666% !important;
+  top: 33.3333% !important;
+  left: 75vw;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+#planeImg {
+  position: absolute;
+  z-index: 10;
+}
+
+#arrowImg {
+  position: absolute;
+  z-index: 10;
+}
+
+#OpenHelp {
+  position: absolute;
+  display: none;
+  left: 75vw;
+  bottom: calc(var(--screenHeight) * (40px / 1440));
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+#arrowImg {
+  position: absolute;
+}
+
+.historyInfo {
+  padding-left: calc(var(--screenHeight) * (15px / 1440));
+  font-size: small;
+}
+
+.vr_warning {
+  padding: calc(var(--screenHeight) * (15px / 1440));
+  color: #ffdddd;
+}
+
+.custom-font-size .tabulator-cell,
+.custom-font-size .tabulator-header .tabulator-col {
+  font-size: calc(var(--fontSizeParagraph) *0.75);
+}

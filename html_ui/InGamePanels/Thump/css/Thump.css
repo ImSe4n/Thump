@@ -1,0 +1,125 @@
+.Thump_DefaultThumpView {
+    min-width: 60%;
+    height: calc(var(--screenHeight) * (408px / 1440)) !important;
+    width: calc(var(--screenHeight) * (500px / 1440)) !important;
+}
+
+.Thump_Minimized {
+    /*  height: calc(var(--screenHeight) * (65px / 1440)) !important;*/
+    width: calc(var(--screenHeight) * (51px / 1440)) !important;
+    background-color: #00000000;
+    transition: opacity 0.1s ease-in-out;
+}
+
+.Thump_smallTitle {
+    width: 100%;
+    position: absolute !important;
+    top: calc(var(--screenHeight) * (5px / 1440)) !important;
+    left: 0 !important;
+    font-size: calc(var(--screenHeight) * (12px / 1440)) !important;
+}
+
+ingame-ui#Thump {
+    /*  transition: width 0.1s !important;*/
+    display: flex;
+    flex-direction: column;
+}
+
+ingame-ui#Thump #minibut {
+    position: absolute;
+    top: calc(var(--screenHeight) * (20px / 1440));
+    left: calc(var(--screenHeight) * (5px / 1440));
+    width: calc(var(--screenHeight) * (42px / 1440)) !important;
+    height: calc(var(--screenHeight) * (40px / 1440));
+    /*margin-top: calc(var(--screenHeight) * -1 * (40px / 1440));*/
+    display: none;
+    opacity: 1;
+    transition: opacity 0.1s ease-in-out;
+}
+
+ingame-ui#Thump #minibut:hover {
+    opacity: 1 !important;
+}
+
+ingame-ui#Thump ingame-ui-header:hover {
+    opacity: 1 !important;
+}
+
+ingame-ui#Thump #panelWrap {
+    font-size: var(--fontSizeParagraph);
+    display: flex;
+    height: calc(var(--screenHeight) * (342px / 1440));
+    flex-grow: 1;
+    overflow: hidden;
+    align-items: stretch !important;
+}
+
+ingame-ui#Thump #panelWrap #container {
+    flex-grow: 1;
+    padding: calc(var(--screenHeight) * (15px / 1440));
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    position: relative;
+    background: var(--backgroundColorPanel) !important;
+    flex: 1 1 auto;
+}
+
+ingame-ui#Thump #container #open_landings {
+    position: relative;
+    width: calc(var(--screenHeight) * (35px / 1440));
+    height: calc(var(--screenHeight) * (35px / 1440));
+    margin-left: calc(var(--screenHeight) * (10px / 1440));
+    display: none;
+}
+
+ingame-ui#Thump .icon-text {
+    display: flex;
+    align-items: center;
+}
+
+ingame-ui#Thump .icon-text .icons {
+    margin-right: calc(var(--screenHeight) * (10px / 1440));
+    color: var(--enabledColor);
+    height: var(--fontSizeParagraph);
+    width: var(--fontSizeParagraph);
+}
+
+ingame-ui#Thump #chevronHolder {
+    height: 100%;
+    padding: 2px;
+}
+
+ingame-ui#Thump #chevronHolder #chevronBut {
+    height: 100%;
+}
+
+ingame-ui#Thump #chevronBut #closeCountdown {
+    position: absolute;
+    bottom: calc(var(--screenHeight) * (20px / 1440));
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.slipIcon {
+    transform: skewX(-20deg);
+}
+
+ingame-ui#Thump .chevron {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-right: calc(var(--screenHeight) * (20px / 1440)) solid #F1FAEE;
+    border-top: calc(var(--screenHeight) * (20px / 1440)) solid transparent;
+    border-bottom: calc(var(--screenHeight) * (20px / 1440)) solid transparent;
+}
+
+ingame-ui .controlButton icon-element {
+    transform: scale(0.75);
+    transform-origin: center;
+}

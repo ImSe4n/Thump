@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="./icons/all.min.css" />
     <link rel="stylesheet" href="/SCSS/common.css" />
     <link rel="stylesheet" href="Thump.css" />
 
@@ -14,24 +15,21 @@
     <script type="text/javascript" src="/JS/simvar.js"></script>
     <script type="text/javascript" src="/JS/buttons.js"></script>
     <script type="text/javascript" src="/JS/Services/ToolBarPanels.js"></script>
+    <script type="text/javascript" src="/JS/Services/Replay.js"></script>
+    <script type="text/javascript" src="/Pages/VCockpit/Instruments/Shared/Utils/DataReadManager.js"></script>
     <script type="text/javascript" src="/Pages/VCockpit/Instruments/Shared/BaseInstrument.js"></script>
 
     <link rel="import" href="/templates/NewPushButton/NewPushButton.html" />
+    <link rel="import" href="/templates/InputableRange/InputableRange.html" />
     <link rel="import" href="/templates/ToggleButton/toggleButton.html" />
+    <link rel="import" href="/Pages/VCockpit/Instruments/Shared/Map/MapInstrument.html" />
     <link rel="import" href="/templates/tabMenu/tabMenu.html" />
     <link rel="import" href="/templates/ingameUi/inGameUi.html" />
     <link rel="import" href="/templates/ingameUiHeader/ingameUiHeader.html" />
     <link rel="import" href="/templates/NewListButton/NewListButton.html" />
-
-    <script type="text/javascript" src="/JS/debug.js"></script>
-
-
-    <script type="text/javascript" src="Telemetry.js"></script>
-    <script type="text/javascript" src="Analyzer.js"></script>
-    <script type="text/javascript" src="Thump.js"></script>
 </head>
 
-<body class="border-box">
+<body id="ThumpToolbarPanel" class="border-box">
     <ingamepanel-thump>
         <ingame-ui id="ThumpPanel" panel-id="PANEL_THUMP" title="THUMP" class="ingameUiFrame panelInvisible"
             content-fit="true" min-width="240" min-height="160">
