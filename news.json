@@ -1,0 +1,5 @@
+{
+    "guid": "de3c488c-5cb7-4b1d-b410-62767f4afda3",
+    "latestversion": "1.0.1",
+    "content": "<p>Hi,</p><br/><h3>Introducing Thump</h3><p>Thump is a new panel that provides a visual representation of the landing rate of your aircraft. It uses a color-coded system to indicate the severity of the landing, ranging from smooth to hard landings.</p><p>To use Thump, simply install the panel and it will automatically display the landing rate during your flights. The panel will change colors based on the landing rate, allowing you to quickly assess the quality of your landings.</p><p>We hope you enjoy using Thump and find it helpful in improving your landing skills!</p>"
+}
