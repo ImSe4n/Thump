@@ -1,16 +1,13 @@
-class IngamePanelThump extends TemplateElement {
-    constructor() {
-        super();
+class IngamePanelThump extends HTMLElement {
+    //use to catch the exact touchdown frame of the aircraft
+    connectedCallback() {
+        super.connectedCallback();
         this._timer = null;
         this._ready = false;
         this._lastTickMs = null;
         this._lastReport = null;
 
         this._analyzer = new window.Thump.LandingAnalyzer();
-    }
-
-    //use to catch the exact touchdown frame of the aircraft
-    connectedCallback() {
         this._timer = setInterval(() => this._tick(), 50);
     }
 
@@ -22,6 +19,7 @@ class IngamePanelThump extends TemplateElement {
     }
 
     _tick() {
+        console.log("Thump: tick");
         const frame = window.Thump.Telemetry.readFrame();
         if (!frame) return;
 
@@ -30,7 +28,7 @@ class IngamePanelThump extends TemplateElement {
             this._setStatus("Live");
         }
 
-        this.renderLiveVs(frame.vsFpm);
+        this._renderLiveVs(frame.vsFpm);
 
         const dt = this._lastTickMs ? (frame.tMs - this._lastTickMs) / 1000 : 0.05;
         this._lastTickMs = frame.tMs;

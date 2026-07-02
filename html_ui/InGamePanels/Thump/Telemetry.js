@@ -6,23 +6,9 @@ window.Thump = window.Thump || {};
 
 window.Thump.Telemetry = {
     readFrame() {
-        try {
-            const simFrame = {
-                tMs: Date.now(),
-                onGround: SimVar.GetSimVarValue("SIM ON GROUND", "Bool") > 0.5,
-                altAglFt: SimVar.GetSimVarValue("PLANE ALT ABOVE GROUND", "Feet"),
-                vsFpm: SimVar.GetSimVarValue("VERTICAL SPEED", "Feet per minute"),
-                gForce: SimVar.GetSimVarValue("G FORCE", "GFORCE"),
-                iasKt: SimVar.GetSimVarValue("AIRSPEED INDICATED", "Knots"),
-                gsKt: SimVar.GetSimVarValue("GROUND VELOCITY", "Knots"),
-            };
-            if (simFrame.altAglFt == undefined || simFrame.altAglFt == null || Number.isNaN(simFrame.altAglFt)) {
-                return null;
-            }
-            return simFrame;
-        } catch (e) {
-            //simvar layer not initialized yet, just return null and wait for the next tick
-            return null;
-        }
+        const data = window.ThumpData;
+        if (!data) return null;
+        if (data.altAglFt === undefined || data.altAglFt === null || Number.isNaN(data.altAglFt)) return null;
+        return data;
     }
-}
+};
