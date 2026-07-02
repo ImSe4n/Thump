@@ -1,0 +1,6 @@
+{
+  "version": "1.0.0",
+  "custom_analyser_url": "https://raw.githubusercontent.com/ImSe4n/Thump/refs/heads/master/lua.json",
+  "news_url": "https://raw.githubusercontent.com/ImSe4n/Thump/refs/heads/master/news.json",
+  "developer": false
+}
